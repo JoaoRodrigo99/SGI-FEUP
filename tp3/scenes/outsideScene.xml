@@ -1,0 +1,2581 @@
+<sxs>
+    <scene root="demoRoot" axis_length="5"/>
+
+    <views default="defaultCamera">
+        <perspective id="Top view" near="0.1" far="500" angle="45">
+            <from x="-20" y="50" z="-15" />
+            <to x="15" y="-10" z="-5" />
+        </perspective>
+        <perspective id="blackCamera" near="0.1" far="500" angle="45">
+            <from x="2" y="6" z="-18" />
+            <to x="5" y="-4" z="4" />
+        </perspective>
+        <perspective id="whiteCamera" near="0.1" far="500" angle="45">
+            <from x="2" y="6" z="4" />
+            <to x="5" y="-4" z="-16" />
+        </perspective>
+        <perspective id="Movie View" near="0.1" far="500" angle="45">
+            <from x="-10" y="15" z="-10" />
+            <to x="15" y="-10" z="-5" />
+        </perspective>
+
+
+    </views>
+
+    <ambient>
+        <ambient r="1" g="1" b="1" a="1.0" />
+        <background r="0.0" g="0.0" b="0.0" a="1.0" />
+    </ambient>
+
+    <lights>
+
+        <spot id="MoonLight" enabled="1" angle="150" exponent="50">
+            <location x="-16" y="13" z="6" w="1.0" />
+            <target x="10" y="-5" z="-15'" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1" />
+            <diffuse r="0.7" g="0.7" b="0.5" a="1" />
+            <specular r="1" g="1" b="1" a="1.0" />
+        </spot>
+
+        <spot id="TableSpot" enabled="1" angle="12" exponent="50">
+            <location x="5" y="20" z="-7" w="1.0" />
+            <target x="0" y="-10" z="0" />
+            <ambient r="0" g="0" b="0" a="1" />
+            <diffuse r="0.5" g="0.5" b="0.5" a="1" />
+            <specular r="1" g="1" b="1" a="1.0" />
+        </spot>
+
+        <spot id="PieceSpot" enabled="1" angle="6" exponent="800">
+            <location x="7.5" y="-500" z="-10.5" w="1.0" />
+            <target x="0" y="-10" z="0" />
+            <ambient r="0" g="0" b="0" a="1" />
+            <diffuse r="1" g="1" b="1" a="1" />
+            <specular r="1" g="1" b="1" a="1.0" />
+        </spot>
+
+        <spot id="MoonSurface" enabled="1" angle="120" exponent="50">
+            <location x="-15" y="13" z="6" w="1.0" />
+            <target x="-16" y="13" z="15" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1" />
+            <diffuse r="0.6" g="0.5" b="0.2" a="1" />
+            <specular r="1" g="1" b="1" a="1.0" />
+        </spot>
+
+
+
+    </lights>
+
+    <textures>
+        <texture id="demoTexture" file="scenes/images/vidral.jpg" />
+        <texture id="trunkTexture" file="scenes/images/trunk-image.jpg" />
+        <texture id="rocksTexture" file="scenes/images/rocks.jpg" />
+        <texture id="leavesTexture" file="scenes/images/leaves.jpg" />
+        <texture id="bankTexture" file="scenes/images/bank.jpg" />
+        <texture id="ballTexture" file="scenes/images/ball.png" />
+        <texture id="narutoTexture" file="scenes/images/naruto.png" />
+        <texture id="sofaTexture" file="scenes/images/sofapattern.jpg" />
+        <texture id="chairSitTexture" file="scenes/images/wood_chair.jpg" />
+        <texture id="footballTexture" file="scenes/images/tvImage.jpg" />
+        <texture id="noticiasTexture" file="scenes/images/noticias.jpg" />
+        <texture id="doorTexture" file="scenes/images/door.jpg" />
+        <texture id="grassTexture" file="scenes/images/grass.jpg" />
+        <texture id="brickWallTexture" file="scenes/images/brickwall.jpg" />
+        <texture id="footballNetTexture" file="scenes/images/footballNet.jpg" />
+        <texture id="portalTexture" file="scenes/images/portal.jpg" />
+        <texture id="moonTexture" file="scenes/images/moon.jpg" />
+
+    </textures>
+
+    <materials>
+        <material id="demoMaterial" shininess="10">
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0" g="0" b="0" a="1.0" />
+            <specular r="0.3" g="0.3" b="0.3" a="1.0" />
+        </material>
+
+        <material id="wallMaterial" shininess="10">
+            <emission r="0.1" g="0.1" b="0.1" a="1.0" />
+            <ambient r="0" g="0" b="0" a="1.0" />
+            <diffuse r="0.59" g="0.46" b="0.32" a="1.0" />
+            <specular r="0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="floorMaterial" shininess="10">
+            <emission r="0.1" g="0.1" b="0.1" a="1.0" />
+            <ambient r="0" g="0" b="0" a="1.0" />
+            <diffuse r="0.2" g="0.1" b="0.1" a="1.0" />
+            <specular r="0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="clearMaterial" shininess="10">
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.8" g="0.8" b="0.8" a="1.0" />
+            <specular r="0.0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="greenMaterial" shininess="10">
+            <emission r="0.1" g="0.1" b="0.1" a="1.0" />
+            <ambient r="0" g="0" b="0" a="1.0" />
+            <diffuse r="0.1" g="0.8" b="0.1" a="1.0" />
+            <specular r="0.0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="yellowMaterial" shininess="10">
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0" g="0" b="0" a="1.0" />
+            <diffuse r="0.5" g="0.5" b="0.1" a="1.0" />
+            <specular r="0.0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="blackMaterial" shininess="10">
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.0" g="0.0" b="0.0" a="1.0" />
+            <specular r="0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="brownMaterial" shininess="10">
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="1" g="0.7" b="0.6" a="1.0" />
+            <specular r="0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="greyMaterial" shininess="10">
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.55" g="0.55" b="0.55" a="1.0" />
+            <specular r="0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+        <material id="roofMaterial" shininess="10">
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="1" g="0.6" b="0.6" a="1.0" />
+            <specular r="0" g="0.0" b="0.0" a="1.0" />
+        </material>
+
+    </materials>
+
+    <transformations>
+
+        <transformation id = "RoomT" >
+            <scale x="1.5" y="1" z="1.2" />
+        </transformation>
+
+        <transformation id="floorT">
+            <translate x="0" y="0" z="0" />
+            <rotate axis="x" angle="-90" />
+            <scale x="5" y="4" z="5" />
+        </transformation>
+
+        <transformation id="Wall1T">
+            <translate x="-2.5" y="2" z="0" />
+            <rotate axis="y" angle="90" />
+            <scale x="8" y="2" z="2" />
+        </transformation>
+
+        <transformation id="Wall2T">
+            <translate x="2.5" y="2" z="0" />
+            <rotate axis="y" angle="-90" />
+            <scale x="8" y="2" z="2" />
+        </transformation>
+
+        <transformation id="Wall3T">
+            <translate x="0" y="2" z="-4" />
+            <rotate axis="y" angle="0" />
+            <scale x="5" y="2" z="2" />
+        </transformation>
+
+        <transformation id="Wall4T">
+            <translate x="0" y="2" z="4" />
+            <rotate axis="y" angle="180" />
+            <scale x="5" y="2" z="2" />
+        </transformation>
+
+        <transformation id="Wall6T">
+            <translate x="2.5" y="2" z="0" />
+            <rotate axis="y" angle="90" />
+            <scale x="2" y="1" z="2" />
+        </transformation>
+
+        <transformation id="Wall7T">
+            <translate x="0" y="2" z="-4" />
+            <rotate axis="y" angle="180" />
+            <scale x="1.255" y="1" z="2" />
+        </transformation>
+
+        <transformation id="Wall8T">
+            <translate x="0" y="2" z="4" />
+            <rotate axis="y" angle="0" />
+            <scale x="1.255" y="1" z="2" />
+        </transformation>
+
+        <transformation id="BallT">
+            <translate x="0" y="1" z="0" />
+            <rotate axis="x" angle="60" />
+        </transformation>
+
+        <transformation id="BallSupportT">
+            <translate x="0" y="0" z="0" />
+            <rotate axis="x" angle="-90" />
+            <scale x="0.5" y="0.5" z="0.3" />
+        </transformation>
+
+        <transformation id="BallPedastalT">
+            <translate x="-3" y="0" z="-3.5" />
+        </transformation>
+
+        <transformation id="TvT">
+            <translate x="0" y="2.5" z="-3.99" />
+            <scale x="3.5" y="1" z="1" />
+        </transformation>
+
+        <transformation id="TvSupportT">
+            <translate x="0" y="-2.45" z="0.2" />
+            <scale x="1" y="1" z="0.5" />
+        </transformation>
+
+        <transformation id="supportTvT">
+            <translate x="0" y="1" z="-0.8" />
+            <scale x="0.4" y="0.45" z="0.4" />
+        </transformation>
+
+        <transformation id="topSofaT">
+            <translate x="0" y="0.75" z="0" />
+            <rotate axis="x" angle="-90" />
+            <scale x="1" y="1" z="1" />
+        </transformation>
+
+        <transformation id="bottomSofaT">
+            <translate x="0" y="0" z="0" />
+            <rotate axis="x" angle="-90" />
+            <scale x="1" y="1" z="1" />
+        </transformation>
+
+        <transformation id="Lat1SofaOutT">
+            <translate x="0" y="0.5" z="1" />
+            <scale x="1" y="0.5" z="1" />
+        </transformation>
+
+        <transformation id="Lat1SofaInT">
+            <translate x="0" y="0.5" z="1" />
+            <rotate axis="y" angle="-180" />
+            <scale x="1" y="0.5" z="1" />
+        </transformation>
+
+        <transformation id="Lat2SofaInT">
+            <translate x="0" y="0.5" z="-1" />
+            <scale x="1" y="0.5" z="1" />
+        </transformation>
+
+        <transformation id="Lat2SofaOutT">
+            <translate x="0" y="0.5" z="-1" />
+            <rotate axis="y" angle="-180" />
+            <scale x="1" y="0.5" z="1" />
+        </transformation>
+
+        <transformation id="Lat3T">
+            <translate x="-0.5" y="0.4" z="0" />
+            <rotate axis="y" angle="-90" />
+            <rotate axis="z" angle="90" />
+            <scale x="0.8" y="1" z="1" />
+        </transformation>
+
+        <transformation id="Lat4T">
+            <translate x="0.5" y="0.4" z="0" />
+            <rotate axis="y" angle="90" />
+            <rotate axis="z" angle="90" />
+            <scale x="0.8" y="1" z="1" />
+        </transformation>
+
+        <transformation id="SofaBackT">
+            <translate x="-0.5" y="1.2" z="-1" />
+            <scale x="0.3" y="1" z="0.7" />
+        </transformation>
+
+        <transformation id="SofaT">
+            <translate x="0" y="0" z="-1.5" />
+            <rotate axis="y" angle="90" />
+            <scale x="1" y="0.8" z="1.3" />
+        </transformation>
+
+        <transformation id="ChairLeg1T">
+            <translate x="-0.25" y="-0.25" z="0.25" />
+            <rotate axis="x" angle="-90" />
+            <scale x="0.05" y="0.05" z="0.35" />
+        </transformation>
+
+        <transformation id="ChairLeg2T">
+            <translate x="0.25" y="-0.25" z="0.25" />
+            <rotate axis="x" angle="-90" />
+            <scale x="0.05" y="0.05" z="0.35" />
+        </transformation>
+        
+        <transformation id="ChairLeg3T">
+            <translate x="-0.25" y="-0.25" z="-0.25" />
+            <rotate axis="x" angle="-90" />
+            <scale x="0.05" y="0.05" z="0.35" />
+        </transformation>
+        
+        <transformation id="ChairLeg4T">
+            <translate x="0.25" y="-0.25" z="-0.25" />
+            <rotate axis="x" angle="-90" />
+            <scale x="0.05" y="0.05" z="0.35" />
+        </transformation>
+        
+        <transformation id="ChairSitT">
+            <translate x="0" y="0.8" z="0" />
+            <rotate axis="x" angle="-90" />
+            <scale x="0.7" y="0.4" z="1" />
+        </transformation>
+        
+        <transformation id="ChairBackT">
+            <translate x="-0.25" y="1.5" z="0" />
+            <rotate axis="y" angle="90" />
+            <scale x="0.7" y="0.2" z="1" />
+        </transformation>
+        
+        <transformation id="ChairBackBFaceT">
+            <translate x="-0.25" y="1.5" z="0" />
+            <rotate axis="y" angle="-90" />
+            <scale x="0.7" y="0.2" z="1" />
+        </transformation>
+        
+        <transformation id="ChairBackPost1T">
+            <translate x="-0.25" y="1" z="-0.25" />
+            <rotate axis="y" angle="90" />
+            <scale x="0.1" y="0.4" z="1" />
+        </transformation>
+        
+        <transformation id="ChairBackPost1BackT">
+            <translate x="-0.25" y="1" z="-0.25" />
+            <rotate axis="y" angle="-90" />
+            <scale x="0.1" y="0.4" z="1" />
+        </transformation>
+        
+        <transformation id="ChairBackPost2T">
+            <translate x="-0.25" y="1" z="0.25" />
+            <rotate axis="y" angle="-90" />
+            <scale x="0.1" y="0.4" z="1" />
+        </transformation>
+        
+        <transformation id="ChairBackPost2BackT">
+            <translate x="-0.25" y="1" z="0.25" />
+            <rotate axis="y" angle="90" />
+            <scale x="0.1" y="0.4" z="1" />
+        </transformation>
+        
+        <transformation id="TableT">
+                <scale x="3" y="1.5" z="3" />
+        </transformation>
+        
+        <transformation id="TableDecorT">
+            <translate x="0" y="0" z="0" />
+        </transformation>
+
+        <transformation id="centerDecorT">
+            <translate x="0" y="1.2" z="0" />
+            <scale x="0.15" y="0.5" z="0.15" />
+            <rotate axis="x" angle="90" />
+        </transformation>
+        
+        <transformation id="napkin1T">
+            <translate x="0.5" y="1.22" z="0.85" />
+            <scale x="0.15" y="0.15" z="0.2" />
+            <rotate axis="x" angle="-90" />
+        </transformation>
+
+        <transformation id="napkin2T">
+            <translate x="-0.5" y="1.22" z="-0.7" />
+            <scale x="0.15" y="0.15" z="0.2" />
+            <rotate axis="x" angle="90" />
+            <rotate axis="z" angle="180" />
+        </transformation>
+
+        <transformation id="napkin3T">
+            <translate x="-0.7" y="1.22" z="0.56" />
+            <scale x="0.15" y="0.15" z="0.2" />
+            <rotate axis="x" angle="90" />
+            <rotate axis="z" angle="90" />
+        </transformation>
+
+        <transformation id="napkin4T">
+            <translate x="0.7" y="1.22" z="-0.5" />
+            <scale x="0.15" y="0.15" z="0.2" />
+            <rotate axis="x" angle="90" />
+            <rotate axis="z" angle="-90" />
+        </transformation>
+
+        <transformation id="glass1T">
+            <translate x="0.3" y="1.22" z="0.55" />
+            <scale x="0.1" y="0.1" z="0.1" />
+            <rotate axis="x" angle="-90" />
+        </transformation>
+
+        <transformation id="glass2T">
+            <translate x="-0.3" y="1.22" z="-0.5" />
+            <scale x="0.1" y="0.1" z="0.1" />
+            <rotate axis="x" angle="-90" />
+        </transformation>
+
+        <transformation id="glass3T">
+            <translate x="-0.35" y="1.22" z="0.3" />
+            <scale x="0.1" y="0.1" z="0.1" />
+            <rotate axis="x" angle="-90" />
+        </transformation>
+
+        <transformation id="glass4T">
+            <translate x="0.4" y="1.22" z="-0.3" />
+            <scale x="0.1" y="0.1" z="0.1" />
+            <rotate axis="x" angle="-90" />
+        </transformation>
+
+        <transformation id="Chair1T">
+            <translate x="1" y="0" z="0" />
+            <rotate axis="y" angle="180" />
+        </transformation>
+        
+        <transformation id="Chair2T">
+            <translate x="-1" y="0" z="0" />
+            <rotate axis="y" angle="0" />
+        </transformation>
+        
+        <transformation id="Chair3T">
+            <translate x="0" y="0" z="1.3" />
+            <rotate axis="y" angle="90" />
+        </transformation>
+        
+        <transformation id="Chair4T">
+            <translate x="0" y="0" z="-1.3" />
+            <rotate axis="y" angle="-90" />
+        </transformation>
+        
+        <transformation id="TableAndChairsT">
+            <translate x="2" y="0" z="2.5" />
+        </transformation>
+
+        <transformation id="IndoorT">
+            <translate x="-3.73" y="1.5" z="2" />
+            <scale x="1" y="1.5" z="1.4" />
+            <rotate axis="y" angle="90" />
+        </transformation>
+
+        <transformation id="OutdoorT">
+            <translate x="-3.77" y="1.5" z="2" />
+            <scale x="1" y="1.5" z="1.4" />
+            <rotate axis="y" angle="90" />
+            <rotate axis="x" angle="180" />
+            <rotate axis="z" angle="180" />
+        </transformation>
+
+        <transformation id="OutsideFloorT">
+            <translate x="-2.75" y="-0.01" z="-0.2" />
+            <scale x="10" y="1" z="8" />
+            <rotate axis="x" angle="-90" />
+        </transformation>
+        
+        <transformation id="OutsideWallT">
+            <translate x="-3.76" y="2" z="0" />
+            <scale x="2" y="1.0" z="2.4" />
+            <rotate axis="y" angle="90" />
+            <rotate axis="x" angle="180" />
+        </transformation>
+
+        <transformation id="OutsideTreeLogT">
+            <scale x="0.2" y="1" z="0.2" />
+            <rotate axis="x" angle="-90" />
+        </transformation>
+
+        <transformation id="OutsideTreeLeavesT">
+            <translate x="0" y="3.3" z="0" />
+            <scale x="2" y="2" z="2" />
+        </transformation>
+
+        <transformation id="OutsideTreeT">
+            <translate x="-11.5" y="0" z="-9" />
+        </transformation>
+
+        <transformation id="OutsideTree2T">
+            <translate x="-7.5" y="0" z="-9" />
+        </transformation>
+
+        <transformation id="OutsideTree3T">
+            <translate x="-7.5" y="0" z="9" />
+        </transformation>
+
+        <transformation id="OutsideTree4T">
+            <translate x="-11.5" y="0" z="9" />
+        </transformation>
+
+        <transformation id="OutsideRoomT">
+            <translate x="0" y="0" z="0" />
+        </transformation>
+        
+        <transformation id="OutsideBallT">
+            <translate x="-12" y="5" z="0" />
+        </transformation>
+
+        <transformation id="MoonT">
+            <translate x="10" y="10" z="-20" />
+            <scale x="5" y="5" z="5" />
+        </transformation>
+
+        <transformation id="SwingT">
+            <translate x="-6.2" y="1.5" z="-2" />
+        </transformation>
+        
+        <transformation id="SwingSitT">
+            <translate x="1" y="0" z="0" />
+            <rotate axis="x" angle="90" />
+            <scale x="0.3" y="0.3" z="0.8" />
+        </transformation>
+        
+        <transformation id="SwingHold1T">
+            <translate x="1" y="1.4" z="-0.6" />
+            <rotate axis="y" angle="-90" />
+            <scale x="0.2" y="1.3" z="1" />
+        </transformation>
+
+        <transformation id="SwingHold2T">
+            <translate x="1" y="1.4" z="0.6" />
+            <rotate axis="y" angle="-90" />
+            <scale x="0.2" y="1.3" z="1" />
+        </transformation>
+
+        <transformation id="SwingHold3T">
+            <translate x="0" y="2.6" z="-0.6" />
+            <rotate axis="y" angle="90" />
+            <scale x="0.05" y="0.05" z="0.8" />
+        </transformation>
+
+        <transformation id="SwingHold4T">
+            <translate x="0" y="2.6" z="0.6" />
+            <rotate axis="y" angle="90" />
+            <scale x="0.05" y="0.05" z="0.8" />
+        </transformation>
+
+        <transformation id="nurbCylinderT">
+            <translate x="0" y="0" z="0" />
+        </transformation>
+        
+        <transformation id="nurbCylinderHalf1T">
+            <translate x="0" y="0" z="0" />
+        </transformation>
+        
+        <transformation id="nurbCylinderHalf2T">
+            <translate x="1" y="0" z="0" />
+            <rotate axis="y" angle="180" />
+        </transformation>
+        
+        <transformation id="nurbCircleHalf1T">
+            <translate x="0" y="0" z="0" />
+            <rotate axis="z" angle="-90" />
+        </transformation>
+        
+        <transformation id="nurbCircleHalf2T">
+            <translate x="0" y="0" z="1" />
+            <rotate axis="z" angle="-90" />
+            <rotate axis="x" angle="180" />
+        </transformation>
+        
+        
+        <transformation id="nurbCircleTopT">
+            <translate x="0.5" y="1.85" z="-0.5" />
+        </transformation>
+        
+        <transformation id="nurbCircleBotT">
+            <translate x="0.5" y="0.1" z="-0.5" />
+            <rotate axis="z" angle="180" />
+        </transformation>
+        
+        <transformation id="nurbBarrilT">
+            <translate x="-3" y="5.8" z="2" />
+        </transformation>
+
+        <transformation id="smokeParticle1T">
+            <translate x="0.5" y="0" z="1.75" />
+        </transformation>
+
+        <transformation id="smokeParticle2T">
+            <translate x="1.5" y="0.5" z="1.2" />
+        </transformation>
+
+        <transformation id="smokeParticle3T">
+            <translate x="1" y="1" z="1.4" />
+        </transformation>
+
+        <transformation id="smokeParticle4T">
+            <translate x="0" y="2" z="1.8" />
+        </transformation>
+
+        <transformation id="smokeT">
+            <translate x="-3" y="7.2" z="1.3" />
+            <scale x="0.5" y="0.5" z="0.5" />
+        </transformation>
+
+        <transformation id="nurbTentT">
+            <translate x="0" y="4" z="0" />
+            <scale x="4.5" y="4" z="4.8" />
+        </transformation>
+        
+        <transformation id="nurbRectangleT">
+            <translate x="-9.5" y="2" z="-10.2" />
+        </transformation>
+
+        <transformation id="nurbRectangle2T">
+            <translate x="-9.5" y="2" z="9.8" />
+            <rotate axis="y" angle="180" />
+        </transformation>
+
+        <transformation id="PortalT">
+            <translate x="9.2" y="3" z="0" />
+            <rotate axis="y" angle="-90" />
+            <scale x="2" y="2" z="0" />
+        </transformation>
+
+        <transformation id="roofTriangle1T">
+            <translate x="-3.75" y="8" z="0" />
+            <rotate axis="y" angle="90" />
+            <rotate axis="z" angle="90" />
+            <scale x="4" y="4.8" z="6" />
+        </transformation>
+
+        <transformation id="roofTriangle2T">
+            <translate x="3.75" y="8" z="0" />
+            <rotate axis="y" angle="-90" />
+            <rotate axis="z" angle="90" />
+            <scale x="4" y="4.8" z="6" />
+        </transformation>
+
+        <transformation id="roofT">
+            <translate x="0" y="0" z="0" />
+        </transformation>
+
+        <transformation id="OutsideTreesT">
+            <translate x="0" y="0" z="0" />
+        </transformation>
+
+        <transformation id="OutsideTentT">
+            <translate x="6" y="0" z="10" />    
+            <scale x="2" y="3" z="2" />
+        </transformation>
+
+        <transformation id="demoRootT">
+            <translate x="-7" y="0" z="-7" />
+            <scale x="1" y="1" z="1" />
+            <rotate axis="y" angle="180" />
+        </transformation>
+        
+        <transformation id="HouseT">
+            <translate x="7" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+            <!-- <rotate axis="y" angle="180" /> -->
+        </transformation>
+        
+
+    </transformations>
+
+
+    <primitives>
+        <primitive id="demoRectangle">
+            <rectangle x1="-0.5" y1="-1" x2="0.5" y2="1" />
+            
+        </primitive>
+
+        <primitive id="demoCylinder">
+            <cylinder slices = "30" height = "3" stacks = "1" base = "1" top = "1"/>
+            
+        </primitive>
+
+        <primitive id="demoBall">
+            <sphere radius = "0.5" slices = "10" stacks = "12" />
+            
+        </primitive>
+
+        <primitive id="demoBall2">
+            <sphere radius = "0.5" slices = "4" stacks = "7" />
+            
+        </primitive>
+
+        <primitive id="demoTriangle">
+            <triangle x1 = "-1" y1 = "-1" z1 = "0" x2 = "0" y2 = "0" z2 = "0" x3 = "-1" y3 = "1" z3 = "0" />
+        </primitive>
+
+        <primitive id="demoTorus">
+            <torus inner = "0.2" outer = "2" slices= "40" loops = "40" />
+            
+        </primitive>
+
+        <primitive id="nurbsRectangle">
+            <!-- RECTANGLE -->
+            <patch degree_u="1" parts_u="20" degree_v="1" parts_v="20" >
+                <controlpoint x="-2.0" y="-2.0" z="0.0" />
+                <controlpoint x="-2.0" y="2.0" z="0.0" />
+                <controlpoint x="2.0" y="-2.0" z="0.0" />
+                <controlpoint x="2.0" y="2.0" z="0.0" />
+            </patch>
+        </primitive>
+
+        <primitive id="nurbsTent">
+            <!-- TENT -->
+            <patch degree_u="1" parts_u="1" degree_v="2" parts_v="2" >
+                <controlpoint x="1.0" y="0.0" z="-1.0" />
+                <controlpoint x="1.0" y="2.0" z="0.0" />
+                <controlpoint x="1.0" y="0.0" z="1.0" />
+
+                <controlpoint x="-1.0" y="0.0" z="-1.0" />
+                <controlpoint x="-1.0" y="2.0" z="0.0" />
+                <controlpoint x="-1.0" y="0.0" z="1.0" />
+            </patch>
+        </primitive>
+
+        <primitive id="nurbsHalfCylinder">
+            <!-- Vertical -->
+            <patch degree_u="2" parts_u="20" degree_v="3" parts_v="20" >
+                <controlpoint x="0.0" y="2.0" z="0.0" />
+                <controlpoint x="0.0" y="2.0" z="0.75" />
+                <controlpoint x="1.0" y="2.0" z="0.75" />
+                <controlpoint x="1.0" y="2.0" z="0.0" />
+
+                <controlpoint x="-0.5" y="1" z="0.0" />
+                <controlpoint x="-0.5" y="1" z="1.25" />
+                <controlpoint x="1.5" y="1" z="1.25" />
+                <controlpoint x="1.5" y="1" z="0.0" />
+
+                <controlpoint x="0.0" y="0.0" z="0.0" />
+                <controlpoint x="0.0" y="0.0" z="0.75" />
+                <controlpoint x="1.0" y="0.0" z="0.75" />
+                <controlpoint x="1.0" y="0.0" z="0.0" /> 
+
+            </patch>
+        </primitive>
+
+        <primitive id="nurbsHalfCircle">
+            <patch degree_u="1" parts_u="20" degree_v="3" parts_v="30" >
+
+                <controlpoint x="0.0" y="0.0" z="0.5" />
+                <controlpoint x="0.0" y="0.0" z="0.5" />
+                <controlpoint x="0.0" y="0.0" z="0.5" />
+                <controlpoint x="0.0" y="0.0" z="0.5" />
+
+                <controlpoint x="0.0" y="0.0" z="1.0" />
+                <controlpoint x="0.0" y="0.75" z="1.0" />
+                <controlpoint x="0.0" y="0.75" z="0.0" />
+                <controlpoint x="0.0" y="0.0" z="0.0" />
+
+            </patch>
+        </primitive>
+
+
+        <primitive id="demoNurbs">
+
+            <!-- Half Cylinder -->
+            <patch degree_u="1" parts_u="2" degree_v="3" parts_v="30" >
+
+                <!-- Horizontal -->
+                <controlpoint x="0.0" y="0.0" z="0.0" />
+                <controlpoint x="0.0" y="0.0" z="1.0" />
+                <controlpoint x="0.0" y="1.0" z="1.0" />
+                <controlpoint x="0.0" y="1.0" z="0.0" />
+
+                <controlpoint x="1.0" y="0.0" z="0.0" />
+                <controlpoint x="1.0" y="0.0" z="1.0" />
+                <controlpoint x="1.0" y="1.0" z="1.0" />
+                <controlpoint x="1.0" y="1.0" z="0.0" />
+
+            </patch>
+
+
+        </primitive>
+
+    </primitives>
+
+    <animations>
+        <keyframeanim id="kf1">        
+
+        <!-- <keyframe instant="0">
+           
+            <translation x="0" y="0" z="0" />
+            <rotation axis="z" angle="0" />
+            <rotation axis="y" angle="10" />
+            <rotation axis="x" angle="0" />
+            <scale sx="1" sy="1" sz="1" />
+                
+        </keyframe> -->
+            <keyframe instant="0.1">
+           
+            <translation x="0" y="0" z="0" />
+            <rotation axis="z" angle="0" />
+            <rotation axis="y" angle="10" />
+            <rotation axis="x" angle="0" />
+            <scale sx="1" sy="1" sz="1" />
+            
+            </keyframe>
+
+            <keyframe instant="100">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="3000" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+
+            
+        </keyframeanim>
+
+        <keyframeanim id="kf2">        
+
+            <keyframe instant="1">
+               
+                <translation x="0" y="-4" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+    
+            <keyframe instant="2">
+               
+                <translation x="0" y="0" z="5" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="2" sz="1" />
+                    
+            </keyframe>
+
+            <keyframe instant="3">
+               
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="33" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                        
+            </keyframe>
+
+            <keyframe instant="4">
+               
+                <translation x="2" y="0" z="-15" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="300" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="2" sz="1" />
+                        
+            </keyframe>
+
+            <keyframe instant="50">
+               
+                <translation x="2" y="-1" z="10" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="30000" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                        
+            </keyframe>
+                
+        </keyframeanim>
+
+        <keyframeanim id="kf3">        
+
+            <keyframe instant="1">
+           
+            <translation x="0" y="0" z="0" />
+            <rotation axis="z" angle="0" />
+            <rotation axis="y" angle="0" />
+            <rotation axis="x" angle="0" />
+            <scale sx="1" sy="1" sz="1" />
+            
+            </keyframe>
+
+            <keyframe instant="20">
+           
+                <translation x="0" y="5" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="100" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+            
+        </keyframeanim>
+
+        <keyframeanim id="kf4">        
+
+            <keyframe instant="2">
+           
+                <translation x="-1" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="-5" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+            
+            </keyframe>
+
+            <keyframe instant="4">
+           
+                <translation x="1" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="5" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+
+            <keyframe instant="6">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+
+            <keyframe instant="8">
+           
+                <translation x="-1" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="-5" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+    
+            <keyframe instant="10">
+               
+                    <translation x="1" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="5" />
+                    <rotation axis="x" angle="0" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+    
+            <keyframe instant="12">
+               
+                    <translation x="0" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="0" />
+                    <rotation axis="x" angle="0" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+            
+            <keyframe instant="14">
+           
+                <translation x="-1" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="-5" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+    
+            <keyframe instant="16">
+               
+                    <translation x="1" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="5" />
+                    <rotation axis="x" angle="0" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+    
+            <keyframe instant="18">
+               
+                    <translation x="0" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="0" />
+                    <rotation axis="x" angle="0" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+            
+            
+        </keyframeanim>
+
+        <keyframeanim id="kf5">        
+
+            <keyframe instant="2">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0'" />
+                <rotation axis="x" angle="-25" />
+                <scale sx="1" sy="1" sz="1" />
+            
+            </keyframe>
+
+            <keyframe instant="4">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0" />
+                <rotation axis="x" angle="25" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+
+            <keyframe instant="6">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+
+            <keyframe instant="8">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0'" />
+                <rotation axis="x" angle="-25" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+    
+            <keyframe instant="10">
+               
+                    <translation x="0" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="0" />
+                    <rotation axis="x" angle="25" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+    
+            <keyframe instant="12">
+               
+                    <translation x="0" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="0" />
+                    <rotation axis="x" angle="0" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+            
+            <keyframe instant="14">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0'" />
+                <rotation axis="x" angle="-25" />
+                <scale sx="1" sy="1" sz="1" />
+                
+            </keyframe>
+    
+            <keyframe instant="16">
+               
+                    <translation x="0" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="0" />
+                    <rotation axis="x" angle="25" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+    
+            <keyframe instant="18">
+               
+                    <translation x="0" y="0" z="0" />
+                    <rotation axis="z" angle="0" />
+                    <rotation axis="y" angle="0" />
+                    <rotation axis="x" angle="0" />
+                    <scale sx="1" sy="1" sz="1" />
+                    
+            </keyframe>
+            
+        </keyframeanim>
+
+        <keyframeanim id="kf6">        
+
+            <keyframe instant="1">
+           
+                <translation x="0" y="0" z="0" />
+                <rotation axis="z" angle="0" />
+                <rotation axis="y" angle="0" />
+                <rotation axis="x" angle="0" />
+                <scale sx="1" sy="1" sz="1" />
+                
+                </keyframe>
+
+            <keyframe instant="200">
+           
+            <translation x="0" y="0" z="0" />
+            <rotation axis="z" angle="0" />
+            <rotation axis="y" angle="3000" />
+            <rotation axis="x" angle="0" />
+            <scale sx="1" sy="1" sz="1" />
+            
+            </keyframe>
+
+            
+        </keyframeanim>
+
+    </animations>
+
+    <components>
+
+        <!-- Delimitar a seccção de espaço que vamos utilizar -->
+        <component id="Floor">
+            <transformation>
+                <transformationref id = "floorT" />
+            </transformation>
+            <materials>
+                <material id="demoMaterial" />
+                <material id="floorMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <!-- Wall 1 & 2 are bigger walls, 3 & 4 smaller ones -->
+        <component id="Wall1">
+            <transformation >
+                <transformationref id = "Wall1T" />
+            </transformation>
+            <materials>
+                <material id="wallMaterial" />
+                <material id="greenMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Wall2">
+            <transformation >
+                <transformationref id = "Wall2T" />
+            </transformation>
+            <materials>
+                <material id="wallMaterial" />
+                <material id="yellowMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Wall3">
+            <transformation >
+                <transformationref id = "Wall3T" />
+            </transformation>
+            <materials>
+                <material id="wallMaterial" />
+                <material id="greenMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Wall4">
+            <transformation >
+                <transformationref id = "Wall4T" />
+            </transformation>
+            <materials>
+                <material id="wallMaterial" />
+                <material id="yellowMaterial" />
+                <material id="greenMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Wall6">
+            <transformation >
+                <transformationref id = "Wall6T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "brickWallTexture"/>
+            <children>
+                <primitiveref id="nurbsRectangle" />
+            </children>
+        </component>
+
+        <component id="Wall7">
+            <transformation >
+                <transformationref id = "Wall7T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "brickWallTexture"/>
+            <children>
+                <primitiveref id="nurbsRectangle" />
+            </children>
+        </component>
+
+        <component id="Wall8">
+            <transformation >
+                <transformationref id = "Wall8T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "brickWallTexture"/>
+            <children>
+                <primitiveref id="nurbsRectangle" />
+            </children>
+        </component>
+
+        <component id="Room">
+            <transformation >
+                <transformationref id = "RoomT" />
+            </transformation>
+            <materials>
+                <material id="wallMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Floor"/>
+                <componentref id="Wall1"/>
+                <componentref id="Wall2"/>
+                <componentref id="Wall3"/>
+                <componentref id="Wall4"/>
+                <componentref id="Wall6"/>
+                <componentref id="Wall7"/>
+                <componentref id="Wall8"/>
+                
+            </children>
+        </component>
+
+        <!-- Scene Objects (Chair, tables, etc...) -->
+
+        <component id="Ball">
+            <transformation>
+                <transformationref id = "BallT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id ="trunkTexture" />
+            <children>
+                <primitiveref id="demoBall" />
+            </children>
+            <highlighted r="0" g="200" b="0" scale_h="1.1" /> 
+        </component>
+
+        <component id="BallSupport">
+            <transformation >
+                <transformationref id = "BallSupportT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id ="trunkTexture" length_s = "1" length_t = "1"/>
+            <children>
+                <primitiveref id="demoCylinder" />
+
+            </children>
+        </component>
+
+        <component id="BallPedastal">
+            <transformation >
+                <transformationref id = "BallPedastalT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Ball"/>
+                <componentref id="BallSupport"/>
+            </children>
+            <!-- <animationref id = "kf1"/> -->
+        </component>
+
+        <component id="Tv">
+            <transformation >
+                <transformationref id = "TvT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "footballTexture" length_s = "1" length_t = "1"/>
+            <children>
+                <primitiveref id="demoRectangle"/>
+                <componentref id="TvSupport"/>
+            </children>
+        </component>
+
+        <component id="TvSupport">
+            <transformation >
+                <transformationref id = "TvSupportT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="BoxTv"/>
+            </children>
+        </component>
+
+        <component id="BoxTv">
+            <transformation >
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="topSofa"/>
+                <componentref id="bottomSofa"/>
+                <componentref id="Lat3"/>
+                <componentref id="Lat4"/>
+                <componentref id="supportTV"/>
+            </children>
+        </component>
+
+        <component id="supportTV">
+            <transformation >
+                <transformationref id = "supportTvT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoCylinder"/>
+            </children>
+        </component>
+
+
+        <!-- Sofa -->
+
+            <!-- Paralelepípedo (assento) - 6 faces-->
+
+                <!-- Face de cima e baixo -->
+        <component id="topSofa">
+            <transformation >
+                <transformationref id = "topSofaT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "sofaTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="bottomSofa">
+            <transformation>
+                <transformationref id = "bottomSofaT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <!-- Laterais do sofa -->
+
+        <component id="Lat1SofaOut">
+            <transformation >
+                <transformationref id = "Lat1SofaOutT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Lat1SofaIn">
+            <transformation>
+                <transformationref id = "Lat1SofaInT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Lat2SofaIn">
+            <transformation >
+                <transformationref id = "Lat2SofaInT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Lat2SofaOut">
+            <transformation >
+                <transformationref id = "Lat2SofaOutT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Lat3">
+            <transformation >
+                <transformationref id = "Lat3T" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Lat4">
+            <transformation >
+                <transformationref id = "Lat4T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "sofaTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="SofaBack">
+            <transformation >
+                <transformationref id = "SofaBackT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoCylinder" />
+            </children>
+        </component>
+
+        <component id="Sofa">
+            <transformation >
+                <transformationref id = "SofaT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "sofaTexture" length_s = "1" length_t = "1" />
+            <children>
+                <componentref id="topSofa"/>
+                <componentref id="bottomSofa"/>
+                <componentref id="Lat1SofaOut"/>
+                <componentref id="Lat1SofaIn"/>
+                <componentref id="Lat2SofaOut"/>
+                <componentref id="Lat2SofaIn"/>
+                <componentref id="Lat3"/>
+                <componentref id="Lat4"/>
+                <componentref id="SofaBack"/>
+            </children>
+        </component>
+
+        <!-- Table + Chairs -->
+
+        <!-- Chair -->
+
+        <component id="ChairLeg1">
+            <transformation >
+                <transformationref id = "ChairLeg1T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id ="trunkTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id="demoCylinder" />
+            </children>
+        </component>
+
+        <component id="ChairLeg2">
+            <transformation >
+                <transformationref id = "ChairLeg2T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id ="trunkTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id="demoCylinder" />
+            </children>
+        </component>
+
+        <component id="ChairLeg3">
+            <transformation>
+                <transformationref id = "ChairLeg3T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id ="trunkTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id="demoCylinder" />
+            </children>
+        </component>
+
+        <component id="ChairLeg4">
+            <transformation >
+                <transformationref id = "ChairLeg4T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id ="trunkTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id="demoCylinder" />
+            </children>
+        </component>
+
+        <component id="ChairSit">
+            <transformation>
+                <transformationref id = "ChairSitT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "chairSitTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="ChairBack">
+            <transformation >
+                <transformationref id = "ChairBackT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="ChairBackBFace">
+            <transformation >
+                <transformationref id = "ChairBackBFaceT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="ChairBackPost1">
+            <transformation >
+                <transformationref id = "ChairBackPost1T" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="ChairBackPost1Back">
+            <transformation >
+                <transformationref id = "ChairBackPost1BackT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="ChairBackPost2">
+            <transformation >
+                <transformationref id = "ChairBackPost2T" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="ChairBackPost2Back">
+            <transformation >
+                <transformationref id = "ChairBackPost2BackT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoRectangle" />
+            </children>
+        </component>
+
+        <component id="Chair">
+            <transformation >
+                
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="ChairLeg1" />
+                <componentref id="ChairLeg2" />
+                <componentref id="ChairLeg3" />
+                <componentref id="ChairLeg4" />
+                <componentref id="ChairSit" />
+                <componentref id="ChairBack" />
+                <componentref id="ChairBackBFace" />
+                <componentref id="ChairBackPost1" />
+                <componentref id="ChairBackPost1Back" />
+                <componentref id="ChairBackPost2" />
+                <componentref id="ChairBackPost2Back" />
+            </children>
+        </component>
+
+        <!-- Table -->
+        <!-- Build Table using a scaled version of the chair without it's back Support -->
+
+        <component id="Table">
+            <transformation>
+                <transformationref id = "TableT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="ChairLeg1" />
+                <componentref id="ChairLeg2" />
+                <componentref id="ChairLeg3" />
+                <componentref id="ChairLeg4" />
+                <componentref id="ChairSit" />
+                
+            </children>
+        </component>
+
+        <!-- <componentref id= "Napkin1"/> -->
+
+            <!-- Table decoration -->
+            <component id="centerDecor">
+                <transformation >
+                    <transformationref id = "centerDecorT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "leavesTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoTorus" />
+                </children>
+            </component>
+
+            <component id="napkin1">
+                <transformation >
+                    <transformationref id = "napkin1T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "2" length_t = "2" />
+                <children>
+                    <primitiveref id="demoTriangle" />
+                </children>
+            </component>
+
+            <component id="napkin2">
+                <transformation >
+                    <transformationref id = "napkin2T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoTriangle" />
+                </children>
+            </component>
+
+            <component id="napkin3">
+                <transformation >
+                    <transformationref id = "napkin3T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoTriangle" />
+                </children>
+            </component>
+
+            <component id="napkin4">
+                <transformation >
+                    <transformationref id = "napkin4T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoTriangle" />
+                </children>
+            </component>
+
+            <component id="glass1">
+                <transformation >
+                    <transformationref id = "glass1T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoCylinder" />
+                </children>
+            </component>
+
+            <component id="glass2">
+                <transformation >
+                    <transformationref id = "glass2T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoCylinder" />
+                </children>
+            </component>
+
+            <component id="glass3">
+                <transformation >
+                    <transformationref id = "glass3T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoCylinder" />
+                </children>
+            </component>
+
+            <component id="glass4">
+                <transformation >
+                    <transformationref id = "glass4T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "bankTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoCylinder" />
+                </children>
+            </component>
+
+            <component id="TableDecor">
+                <transformation >
+                    <transformationref id = "TableDecorT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <componentref id="centerDecor" />
+                    <componentref id="napkin1" />
+                    <componentref id="napkin2" />
+                    <componentref id="napkin3" />
+                    <componentref id="napkin4" />
+                    <componentref id="glass1" />
+                    <componentref id="glass2" />
+                    <componentref id="glass3" />
+                    <componentref id="glass4" />
+                    
+                </children>
+            </component>
+
+        <!-- Table + Chairs -->
+
+        <component id="Chair1">
+            <transformation >
+                <transformationref id = "Chair1T" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Chair" />
+ 
+            </children>
+        </component>
+
+        <component id="Chair2">
+            <transformation >
+                <transformationref id = "Chair2T" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Chair" />
+ 
+            </children>
+        </component>
+
+        <component id="Chair3">
+            <transformation >
+                <transformationref id = "Chair3T" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Chair" />
+ 
+            </children>
+        </component>
+
+        <component id="Chair4">
+            <transformation >
+                <transformationref id = "Chair4T" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Chair" />
+ 
+            </children>
+        </component>
+
+        <component id="TableAndChairs">
+            <transformation >
+                <transformationref id = "TableAndChairsT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Table" />
+                <componentref id="TableDecor" />
+                <componentref id="Chair1" />
+                <componentref id="Chair2" />
+                <componentref id="Chair3" />
+                <componentref id="Chair4" />
+ 
+            </children>
+        </component>
+
+
+        <!-- BACKYARDDD -->
+
+        <!-- Door -->
+        <component id="Indoor">
+            <transformation >
+                <transformationref id = "IndoorT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "doorTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id = "demoRectangle"/>
+ 
+            </children>
+        </component>
+
+        <component id="Outdoor">
+            <transformation >
+                <transformationref id = "OutdoorT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "doorTexture" length_s = "1" length_t = "1" />
+            <children>
+                <primitiveref id = "demoRectangle"/>
+ 
+            </children>
+        </component>
+
+        <!-- ActualBackYard -->
+            <!-- OutsideFLoor -->
+            <component id="OutsideFloor">
+                <transformation >
+                    <transformationref id = "OutsideFloorT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "grassTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id = "nurbsRectangle"/>
+     
+                </children>
+            </component>
+
+            <component id="OutsideWall">
+                <transformation >
+                    <transformationref id = "OutsideWallT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "brickWallTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="nurbsRectangle" />
+                </children>
+            </component>
+
+            <component id="OutsideTreeLog">
+                <transformation >
+                    <transformationref id = "OutsideTreeLogT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "trunkTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoCylinder" />
+                </children>
+            </component>
+
+            <component id="OutsideTreeLeaves">
+                <transformation >
+                    <transformationref id = "OutsideTreeLeavesT" />
+                </transformation>
+                <materials>
+                    <material id="greenMaterial" />
+                    <material id="yellowMaterial" />
+                    <material id="brownMaterial" />
+                    <material id="blackMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <primitiveref id="demoBall2" />
+                </children>
+                <animationref id="kf1"/>
+            </component>
+
+            <component id="OutsideTree">
+                <transformation >
+                    <transformationref id = "OutsideTreeT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <componentref id="OutsideTreeLeaves" />
+                    <componentref id="OutsideTreeLog" />
+                </children>
+            </component>
+
+            <component id="OutsideTree2">
+                <transformation >
+                    <transformationref id = "OutsideTree2T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <componentref id="OutsideTreeLeaves" />
+                    <componentref id="OutsideTreeLog" />
+                </children>
+            </component>
+
+            <component id="OutsideTree3">
+                <transformation >
+                    <transformationref id = "OutsideTree3T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <componentref id="OutsideTreeLeaves" />
+                    <componentref id="OutsideTreeLog" />
+                </children>
+            </component>
+
+            <component id="OutsideTree4">
+                <transformation >
+                    <transformationref id = "OutsideTree4T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <componentref id="OutsideTreeLeaves" />
+                    <componentref id="OutsideTreeLog" />
+                </children>
+            </component>
+
+            <component id="OutsideTrees">
+                <transformation >
+                    <transformationref id = "OutsideTreesT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <componentref id="OutsideTree" />
+                    <componentref id="OutsideTree2" />
+                    <componentref id="OutsideTree3" />
+                    <componentref id="OutsideTree4" />
+                </children>
+            </component>
+
+            <component id="OutsideRoom">
+                <transformation >
+                    <transformationref id = "OutsideRoomT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id = "none"/>
+                <children>
+                    <!-- <componentref id="Indoor"/>
+                    <componentref id="Outdoor"/> -->
+                    <componentref id="OutsideFloor"/>
+                    <!-- <componentref id="OutsideWall"/> -->
+                    <!-- <componentref id="OutsideTrees"/> -->
+                    <!-- <componentref id="OutsideBall"/> -->
+                    <componentref id="Moon"/>
+                    <!--  -->
+                    <!-- <componentref id="Indoor"/>
+                    <componentref id="Outdoor"/>
+                    <componentref id="nurbBarril" />
+                    <componentref id="smoke" />
+                    <componentref id="roof" />
+                    <componentref id="Swing" />
+                    <componentref id="OutsideWall"/> -->
+                    <!-- <componentref id="nurbRectangle" />
+                    <componentref id="nurbRectangle2" /> -->
+                    <componentref id="Portal" />
+                    <!-- <componentref id="Swing" /> -->
+                    <componentref id="OutsideTent" />
+                    
+                </children>
+            </component>
+
+            <component id="OutsideBall">
+                <transformation>
+                    <transformationref id = "OutsideBallT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="ballTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoBall" />
+                </children>
+                <animationref id = "kf2"/>
+            </component>
+
+            <component id="Moon">
+                <transformation>
+                    <transformationref id = "MoonT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="moonTexture" length_s = "1" length_t = "1" />
+                <children>
+                    <primitiveref id="demoBall" />
+                </children>
+                <animationref id = "kf6"/>
+            </component>
+
+            <!-- Swing -->
+            <component id="Swing">
+                <transformation>
+                    <transformationref id = "SwingT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="none" />
+                <children>
+                    <componentref id="SwingSit" />
+                    <componentref id="SwingHold1" />
+                    <componentref id="SwingHold2" />
+                    <componentref id="SwingHold3" />
+                    <componentref id="SwingHold4" />
+                </children>
+            </component>
+
+            <component id="SwingSit">
+                <transformation>
+                    <transformationref id = "SwingSitT" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="none" />
+                <children>
+                    <primitiveref id="demoTorus" />
+                </children>
+                <animationref id = "kf4"/>
+            </component>
+
+            <component id="SwingHold1">
+                <transformation>
+                    <transformationref id = "SwingHold1T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="none" />
+                <children>
+                    <primitiveref id="demoRectangle" />
+                </children>
+                <animationref id = "kf5"/>
+            </component>
+
+            <component id="SwingHold2">
+                <transformation>
+                    <transformationref id = "SwingHold2T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="none" />
+                <children>
+                    <primitiveref id="demoRectangle" />
+                </children>
+                <animationref id = "kf5"/>
+            </component>
+
+            <component id="SwingHold3">
+                <transformation>
+                    <transformationref id = "SwingHold3T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="none" />
+                <children>
+                    <primitiveref id="demoCylinder" />
+                </children>
+            </component>
+
+            <component id="SwingHold4">
+                <transformation>
+                    <transformationref id = "SwingHold4T" />
+                </transformation>
+                <materials>
+                    <material id="clearMaterial" />
+                </materials>
+                <texture id ="none" />
+                <children>
+                    <primitiveref id="demoCylinder" />
+                </children>
+            </component>
+
+
+        <!-- NURBS OBjects -->
+
+        <component id="nurbCylinderHalf1">
+            <transformation >
+                <transformationref id = "nurbCylinderHalf1T" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "inherit"/>
+            <children>
+                <primitiveref id="nurbsHalfCylinder" />
+                
+            </children>
+        </component>
+
+        <component id="nurbCylinderHalf2">
+            <transformation >
+                <transformationref id = "nurbCylinderHalf2T" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "inherit"/>
+            <children>
+                <primitiveref id="nurbsHalfCylinder" />
+                
+            </children>
+        </component>
+
+        <component id="nurbCircleHalf1">
+            <transformation >
+                <transformationref id = "nurbCircleHalf1T" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="nurbsHalfCircle" />
+                
+            </children>
+        </component>
+
+        <component id="nurbCircleHalf2">
+            <transformation >
+                <transformationref id = "nurbCircleHalf2T" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="nurbsHalfCircle" />
+                
+            </children>
+        </component>
+
+        <component id="nurbCylinder">
+            <transformation >
+                <transformationref id = "nurbCylinderT" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "inherit"/>
+            <children>
+                <componentref id="nurbCylinderHalf1" />
+                <componentref id="nurbCylinderHalf2" />
+
+            </children>
+        </component>
+
+        <component id="nurbCircleTop">
+            <transformation >
+                <transformationref id = "nurbCircleTopT" />
+            </transformation>
+            <materials>
+                <material id="blackMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="nurbCircleHalf1" />
+                <componentref id="nurbCircleHalf2" />
+                
+            </children>
+        </component>
+
+        <component id="nurbCircleBot">
+            <transformation >
+                <transformationref id = "nurbCircleBotT" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="nurbCircleHalf1" />
+                <componentref id="nurbCircleHalf2" />
+                
+            </children>
+        </component>
+        
+        <component id="nurbBarril">
+            <transformation >
+                <transformationref id = "nurbBarrilT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "brickWallTexture"/>
+            <children>
+                <componentref id="nurbCylinder" />
+                <componentref id="nurbCircleTop" />
+                <componentref id="nurbCircleBot" />
+            </children>
+        </component>
+
+        <!-- Smoke for chimney -->
+        <component id="smokeParticle1">
+            <transformation >
+                <transformationref id = "smokeParticle1T" />
+            </transformation>
+            <materials>
+                <material id="greyMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoBall2" />
+
+            </children>
+        </component>
+
+        <component id="smokeParticle2">
+            <transformation >
+                <transformationref id = "smokeParticle2T" />
+            </transformation>
+            <materials>
+                <material id="greyMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoBall2" />
+
+            </children>
+        </component>
+
+        <component id="smokeParticle3">
+            <transformation >
+                <transformationref id = "smokeParticle3T" />
+            </transformation>
+            <materials>
+                <material id="greyMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoBall2" />
+
+            </children>
+        </component>
+
+        <component id="smokeParticle4">
+            <transformation >
+                <transformationref id = "smokeParticle4T" />
+            </transformation>
+            <materials>
+                <material id="greyMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="demoBall2" />
+
+            </children>
+        </component>
+
+        <component id="smoke">
+            <transformation >
+                <transformationref id = "smokeT" />
+            </transformation>
+            <materials>
+                <material id="greyMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="smokeParticle1" />
+                <componentref id="smokeParticle2" />
+                <componentref id="smokeParticle3" />
+                <componentref id="smokeParticle4" />
+
+            </children>
+            <animationref id = "kf3"/>
+        </component>
+        
+        <!-- ROOOF -->
+        <component id="nurbTent">
+            <transformation >
+                <transformationref id = "nurbTentT" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <primitiveref id="nurbsTent" />
+                
+            </children>
+        </component>
+
+        <component id="roofTriangle1">
+            <transformation >
+                <transformationref id = "roofTriangle1T" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "none" />
+            <children>
+                <primitiveref id="demoTriangle" />
+            </children>
+        </component>
+
+        <component id="roofTriangle2">
+            <transformation >
+                <transformationref id = "roofTriangle2T" />
+            </transformation>
+            <materials>
+                <material id="inherit" />
+            </materials>
+            <texture id = "none" />
+            <children>
+                <primitiveref id="demoTriangle" />
+            </children> 
+        </component>
+
+        <component id="roof">
+            <transformation >
+                <transformationref id = "roofT" />
+            </transformation>
+            <materials>
+                <material id="roofMaterial" />
+            </materials>
+            <texture id = "none" />
+            <children>
+                <componentref id="nurbTent" />
+                <componentref id="roofTriangle1" />
+                <componentref id="roofTriangle2" />
+            </children>
+        </component>
+
+        <!-- ROOFL ^ -->
+        <component id="nurbRectangle">
+            <transformation >
+                <transformationref id = "nurbRectangleT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "footballNetTexture"/>
+            <children>
+                <primitiveref id="nurbsRectangle" />
+                
+            </children>
+        </component>
+
+        <component id="nurbRectangle2">
+            <transformation >
+                <transformationref id = "nurbRectangle2T" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "footballNetTexture"/>
+            <children>
+                <primitiveref id="nurbsRectangle" />
+                
+            </children>
+        </component>
+
+        <component id="Portal">
+            <transformation >
+                <transformationref id = "PortalT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "portalTexture"/>
+            <children>
+                <primitiveref id="nurbsRectangle" />
+                
+            </children>
+        </component>
+
+        <!-- nurbsTent -->
+
+        <component id="OutsideTent">
+            <transformation >
+                <transformationref id = "OutsideTentT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "trunkTexture"/>
+            <children>
+                <primitiveref id="nurbsTent" />
+                
+            </children>
+        </component>
+
+        <component id="House">
+            <transformation >
+                <transformationref id = "HouseT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="Tv" />
+                <componentref id="Room"/>
+                <componentref id="BallPedastal"/>
+                <componentref id="Sofa"/>
+                <componentref id="TableAndChairs"/>
+                <componentref id="Indoor"/>
+                <componentref id="Outdoor"/>
+                <componentref id="nurbBarril" />
+                <componentref id="smoke" />
+                <componentref id="roof" />
+                <componentref id="Swing" />
+                <componentref id="OutsideWall"/>
+            </children>
+        </component>
+
+    
+        <!-- Component FInal -->
+        <component id="demoRoot">
+            <transformation >
+                <transformationref id = "demoRootT" />
+            </transformation>
+            <materials>
+                <material id="clearMaterial" />
+            </materials>
+            <texture id = "none"/>
+            <children>
+                <componentref id="House" />
+                <componentref id="OutsideRoom"/>
+                <!-- <componentref id="Submarine"/> -->
+                
+
+            </children>
+        </component>
+
+
+    </components>
+</sxs>
